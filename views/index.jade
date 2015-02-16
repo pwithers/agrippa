@@ -1,37 +1,36 @@
 extends ../layouts/default
 
 block head
-  title Drywall is Running
+  title AGRIPPA
 
 block neck
   link(rel='stylesheet', href='/views/index.min.css?#{cacheBreaker}')
 
 block body
   div.jumbotron
-    h1 Success
+    h1 AGRIPPA
     p.lead
-      | Your Node.js website and user system is running. May the force be with you.
+      | Welcome to Agrippa - the forum for owning your own data.
       div
-        a.btn.btn-primary.btn-lg(href='/signup/') Create an Account
-        |  or&nbsp;
-        a.btn.btn-warning.btn-lg(href='/login/forgot/') Reset Your Password
+        a.btn.btn-primary.btn-lg(href='/signup/') Sign up
+
       div.clearfix
   div.row
     div.col-sm-4
       div.panel.panel-default
         div.panel-body
-          h3 About Us
-          p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
-          a.btn.btn-default.btn-block(href='/about/') Learn More
+          h3 About Agrippa
+          p Agrippa is dedicated to allowing the user to control the data collected. Data is the property of the individual, not the collector.
+          a.btn.btn-default.btn-block(href='/about/') How it works
     div.col-sm-4
       div.panel.panel-default
         div.panel-body
-          h3 Sign Up
-          p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
-          a.btn.btn-default.btn-block(href='/signup/') Learn More
+          h3 Organisations
+          p We use only the finest ethically-sourced free-range data. To understand why this helps everyone, and to get started, come this way.
+          a.btn.btn-default.btn-block(href='/organisations/') Learn more
     div.col-sm-4
       div.panel.panel-default
         div.panel-body
-          h3 Contact Us
-          p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
-          a.btn.btn-default.btn-block(href='/contact/') Learn More
+          h3 Our mission
+          p We are driven to create an internet where the users control and benefit from their data. To connect with this mission, click here.
+          a.btn.btn-default.btn-block(href='/contact/') Connect

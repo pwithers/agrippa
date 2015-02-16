@@ -33,6 +33,7 @@ exports = module.exports = function(app, passport) {
   app.get('/', require('./views/index').init);
   app.get('/about/', require('./views/about/index').init);
   app.get('/contact/', require('./views/contact/index').init);
+  app.get('/organisations/',require('./views/contact/index').init);
   app.post('/contact/', require('./views/contact/index').sendMessage);
 
   //sign up
