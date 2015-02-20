@@ -172,6 +172,23 @@ exports = module.exports = function(app, passport) {
   app.get('/account/settings/tumblr/callback/', require('./views/account/settings/index').connectTumblr);
   app.get('/account/settings/tumblr/disconnect/', require('./views/account/settings/index').disconnectTumblr);
 
+  //questions
+  app.all('/questions*', ensureAuthenticated);
+  app.all('/questions*', ensureAccount);
+  app.get('/questions/',require('./views/questions/index').init);
+  //app.get('/questions/mine', require('./views/questions/mine/index').init);
+  //app.post('/questions/mine', require('./views/questions/mine/index').create);
+  //app.put('/questions/mine', require('./views/questions/mine/index').update);
+  //app.get('/questions/mine/:id',require('./views/questions/mine/index').answers);
+  //app.get('/questions/get', require('./views/questions/get/index').init);
+
+  //app.post('/questions/answer'. require('./views/questions/answers/index').create);
+
+
+
+
+
+
   //route not found
   app.all('*', require('./views/http/index').http404);
 };
