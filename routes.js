@@ -178,8 +178,9 @@ exports = module.exports = function(app, passport) {
   app.get('/questions/',require('./views/questions/index').init);
   //app.get('/questions/mine', require('./views/questions/mine/index').init);
   //app.post('/questions/mine', require('./views/questions/mine/index').create);
-  //app.put('/questions/mine', require('./views/questions/mine/index').update);
+  //app.put('/questions/mine/:id', require('./views/questions/mine/index').update);
   //app.get('/questions/mine/:id',require('./views/questions/mine/index').answers);
+  //app.delete('/questions/mine/:id',require('./views/questions/mine/index').delete);
   //app.get('/questions/get', require('./views/questions/get/index').init);
 
   //app.post('/questions/answer'. require('./views/questions/answers/index').create);
