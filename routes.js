@@ -176,17 +176,21 @@ exports = module.exports = function(app, passport) {
   app.all('/questions*', ensureAuthenticated);
   app.all('/questions*', ensureAccount);
   app.get('/questions/',require('./views/questions/index').init);
-  //app.get('/questions/mine', require('./views/questions/mine/index').init);
-  //app.post('/questions/mine', require('./views/questions/mine/index').create);
+  app.get('/questions/mine', require('./views/questions/mine/index').init);
+  app.post('/questions/ask', require('./views/questions/mine/index').create);
   //app.put('/questions/mine/:id', require('./views/questions/mine/index').update);
   //app.get('/questions/mine/:id',require('./views/questions/mine/index').answers);
-  //app.delete('/questions/mine/:id',require('./views/questions/mine/index').delete);
+  app.delete('/questions/mine/:id',require('./views/questions/mine/index').delete);
   //app.get('/questions/get', require('./views/questions/get/index').init);
 
   //app.post('/questions/answer'. require('./views/questions/answers/index').create);
 
+  //API
+  app.all('/api*', ensureAuthenticated);
+  app.get('/api/hello',require('./api/hello').hello);
 
-
+  // API questions
+  app.get('/api/questions/all',require('./api/questions/getAll').getAll);
 
 
 

@@ -1,0 +1,36 @@
+extends ../../../layouts/account
+
+block head
+  title Questions
+
+block neck
+  link(rel='stylesheet', href='/views/admin/index.min.css?#{cacheBreaker}')
+
+
+block feet
+  script(src='/views/questions/mine/index.min.js?#{cacheBreaker}')
+
+
+block body
+  div.row
+    div.col-sm-6
+      h1 Questions
+      for val in questions
+        p.b #{val.text}
+        p View Edit
+    div.col-sm-6#ask
+      div.page-header
+        script(type='text/template', id='tmpl-ask')
+          form
+            div.alerts
+              |<% _.each(errors, function(err) { %>
+              div.alert.alert-danger.alert-dismissable
+                button.close(type='button', data-dismiss='alert') &times;
+                |<%- err %>
+              |<% }); %>
+            div.form-group(class!='<%- errfor.text ? "has-error" : "" %>')
+              label What do you want to know?
+              input.form-control(type='text', name='text', value!='<%= text %>')
+              span.help-block <%- errfor.text %>
+            div.form-group
+              button.btn.btn-primary.btn-ask(type='button') Ask!
