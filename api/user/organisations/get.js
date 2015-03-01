@@ -1,15 +1,15 @@
 
-exports.getAll = function(req, res){
+exports.get= function(req, res){
   var questions = {};
   var queries = [];
   var base = {};
     queries.push(function(done) {
-      req.app.db.models.Question.find({userCreated:{id:req.user._id}}, function(err, out) {
+      req.app.db.models.UserOrgRights.find({userId:req.user._id}, function(err, out) {
         if (err) {
           return done(err, null);
         }
-        out.forEach(function(q) {
-          questions[q._id] = q;
+        questions.forEach(function(q) {
+          users[q._id] = {id:q.organisationId,roles:q.roles};
         });
         base.questions = questions;
         done(null);

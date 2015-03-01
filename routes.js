@@ -190,9 +190,55 @@ exports = module.exports = function(app, passport) {
   app.get('/api/hello',require('./api/hello').hello);
 
   // API questions
-  app.get('/api/questions/all',require('./api/questions/getAll').getAll);
+  app.get('/api/questions/all',require('./api/questions/getAll').getAll);//unused
+  app.post('/api/questions/ask',require('./api/questions/ask').ask);//unused
+  app.get('/api/questions/get',require('./api/questions/get').get);//unused
+  app.get('/api/questions/reponses', require('./api/questions/responses').get);//unused
+  app.post('/api/questions/answer', require('./api/questions/answer').answer);//unused
+
+  // API conditions
+  // add condition
+  // remove condition
+
+  // API condition groups
+  // create group
+  // delete group
+  // add condition
+  // remove condition
+  // copy group
+
+  // API on Response
+  // add on response
+  // remove on response
+
+  // API reponse group
+  // add questions to group
+  // edit group
+  // create group
+  // delete group
 
 
+  // API login
+  app.post('/api/login',require('./api/login').login);//unused
+  app.delete('/api/logout',require('./api/logout').logout);//unused
+
+  // API user stats
+  // get stat // Needs more
+  // get all stats
+
+  // API Organisation
+  app.get('/api/user/organisations/get',require('./api/user/organisations/get').get);//unused
+  app.delete('/api/user/organisation/leave',require('./api/user/organisations/leave').leave);//unused
+
+  app.get('/api/organisation/get',require('./api/organisation/get').get);//unused
+  app.post('/api/organisation/create',require('./api/organisation/create').create);//unused
+  app.put('/api/organisation/update',require('./api/organisation/update').update);//unused
+  app.delete('/api/organisation/delete',require('./api/organisation/delete').delete);//unused
+
+  // API UserOrg
+  app.post('/api/organisation/roles/add',require('./api/organisation/roles/add').add);//unused
+  app.delete('/api/organisation/roles/remove',require('./api/organisation/roles/remove').remove);//unused
+  app.get('/api/organisation/roles/get',require('./api/organisation/roles/get').get);//unused
 
   //route not found
   app.all('*', require('./views/http/index').http404);
