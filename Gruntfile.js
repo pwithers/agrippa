@@ -15,6 +15,10 @@ module.exports = function(grunt) {
             src: ['backbone.js'], dest: 'public/vendor/backbone/'
           },
           {
+            expand: true, cwd: 'node_modules/angular/',
+            src: ['angular.js'], dest: 'public/vendor/angular/'
+          },
+          {
             expand: true, cwd: 'node_modules/font-awesome/',
             src: ['fonts/**', 'less/**'], dest: 'public/vendor/font-awesome/'
           },
@@ -107,6 +111,7 @@ module.exports = function(grunt) {
             'public/vendor/jquery.cookie/jquery.cookie.js',
             'public/vendor/underscore/underscore.js',
             'public/vendor/backbone/backbone.js',
+            'public/vendor/angular/angular.js',
             'public/vendor/bootstrap/js/affix.js',
             'public/vendor/bootstrap/js/alert.js',
             'public/vendor/bootstrap/js/button.js',
