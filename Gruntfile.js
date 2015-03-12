@@ -73,7 +73,9 @@ module.exports = function(grunt) {
       clientJS: {
          files: [
           'public/layouts/**/*.js', '!public/layouts/**/*.min.js',
-          'public/views/**/*.js', '!public/views/**/*.min.js'
+          'public/views/**/*.js', '!public/views/**/*.min.js',
+          'public/js/**/*.js', '!public/js/**/*.min.js',
+          'public/directives/**/*.js', '!public/directives/**/*.min.js'
          ],
          tasks: ['newer:uglify', 'newer:jshint:client']
       },
@@ -132,7 +134,11 @@ module.exports = function(grunt) {
             'public/vendor/respond/respond.js',
             'public/layouts/ie-sucks.js'
           ],
-          'public/layouts/admin.min.js': ['public/layouts/admin.js']
+          'public/layouts/admin.min.js': ['public/layouts/admin.js'],
+          'public/js/app.min.js':[
+            'public/js/**/*.js',
+            '!public/js/app.min.js'
+          ]
         }
       },
       views: {
@@ -151,12 +157,16 @@ module.exports = function(grunt) {
           jshintrc: '.jshintrc-client',
           ignores: [
             'public/layouts/**/*.min.js',
-            'public/views/**/*.min.js'
+            'public/views/**/*.min.js',
+            'public/js/**/*.min.js',
+            'public/directives/**/*.min.js'
           ]
         },
         src: [
           'public/layouts/**/*.js',
-          'public/views/**/*.js'
+          'public/views/**/*.js',
+          'public/js/**/*.js',
+          'public/directives/**/*.js'
         ]
       },
       server: {
@@ -199,7 +209,11 @@ module.exports = function(grunt) {
           'public/layouts/**/*.min.js',
           'public/layouts/**/*.min.js.map',
           'public/views/**/*.min.js',
-          'public/views/**/*.min.js.map'
+          'public/views/**/*.min.js.map',
+          'public/js/**/*.js',
+          'public/js/**/*.min.js',
+          'public/directives/**/*.js',
+          'public/directives/**/*.min.js'
         ]
       },
       css: {

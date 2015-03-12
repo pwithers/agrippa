@@ -2,9 +2,10 @@
 
 /* Directives */
 
-angular.module('myApp.directives', []).
-  directive('appVersion', function (version) {
-    return function(scope, elm, attrs) {
-      elm.text(version);
+angular.module('app.directives', [])
+  .directive('sidebarNavigation',function() {
+    return {
+      templateUrl:'/directives/sidebar-navigation.html'
+      //template: '<p>Heelo<p/>'
     };
   });

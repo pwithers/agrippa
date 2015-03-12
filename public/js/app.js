@@ -1,28 +1,11 @@
-angular.module('app',['app.filters','app.services','app.directives'])/
-  config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-    $routeProvider.
-      when('/', {
-        templateUrl: 'partials/index',
-        controller: IndexCtrl
-      }).
-      when('/addPost', {
-        templateUrl: 'partials/addPost',
-        controller: AddPostCtrl
-      }).
-      when('/readPost/:id', {
-        templateUrl: 'partials/readPost',
-        controller: ReadPostCtrl
-      }).
-      when('/editPost/:id', {
-        templateUrl: 'partials/editPost',
-        controller: EditPostCtrl
-      }).
-      when('/deletePost/:id', {
-        templateUrl: 'partials/deletePost',
-        controller: DeletePostCtrl
-      }).
-      otherwise({
-        redirectTo: '/'
-      });
-    $locationProvider.html5Mode(true);
-  }]);
+'use strict';
+angular.module('app', ['app.directives'])
+.controller('Controller', ['$scope', function($scope) {
+  $scope.links = [{'main':{target:"/account",text:"Account",icon:"heart"},
+                  'subs':[{target:"/",text:"1",icon:"heart"},
+                    {target:"/little/monkey",text:"2",icon:"heart"}]},
+                {'main':{target:"/",text:"Home",icon:"heart"},
+                  'subs':[{target:"/you/dirty",text:"1",icon:"heart"},
+                    {target:"/little/monkey",text:"2",icon:"heart"}]},
+                {'main':{target:"/logout",text:"Logout",icon:"heart"}}];
+}]);

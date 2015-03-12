@@ -6,8 +6,8 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet', href='/layouts/core.min.css?#{cacheBreaker}')
     link(rel='stylesheet',href='http://fonts.googleapis.com/css?family=Cardo',type='text/css')
-    block neck
-  body(ng-app)
+    link(rel='stylesheet', href='/views/account/index.min.css?#{cacheBreaker}')
+  body(ng-app="app")
     div.navbar.navbar-default.navbar-fixed-top
       div.container
         div.navbar-header
@@ -48,5 +48,6 @@ html
     //if lte IE 9
       script(src='/layouts/ie-sucks.min.js?#{cacheBreaker}')
     script(src='/layouts/core.min.js?#{cacheBreaker}')
-
-    block feet
+    script(src='/views/account/index.min.js?#{cacheBreaker}')
+    script(src='/vendor/angular/angular.js')
+    script(src='/js/app.min.js?#{cacheBreaker}')

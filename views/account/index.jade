@@ -1,14 +1,11 @@
 extends ../../layouts/account
 
 block head
-  title Account Area
-
-block neck
-  link(rel='stylesheet', href='/views/account/index.min.css?#{cacheBreaker}')
-
-block feet
-  script(src='/views/account/index.min.js?#{cacheBreaker}')
-  script(src='/js/app.js?#{cacheBreaker}')
+  title Agrippa
 
 block body
   div.row(ng-view)
+    p Hi {{ 1+2 }}
+  div(ng-controller="Controller")
+    ul
+      menu-bar(links="links")
