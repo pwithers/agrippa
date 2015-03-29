@@ -6,6 +6,6 @@ block head
 block body
   div.row(ng-view)
     p Hi {{ 1+2 }}
-  div(ng-controller="Controller")
-    ul
-      menu-bar(links="links")
+  div.row
+    div(ng-controller="Controller")
+      nav-bar(links="links",headinfo="headinfo")

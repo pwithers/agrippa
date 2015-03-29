@@ -1,10 +1,10 @@
 /* global app:true */
 /* exported app */
-
+'use strict';
 var app; //the main declaration
 
 (function() {
-  'use strict';
+
 
   $(document).ready(function() {
     //active (selected) navigation elements

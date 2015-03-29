@@ -2,10 +2,4 @@
 
 /* Directives */
 
-angular.module('app.directives', [])
-  .directive('sidebarNavigation',function() {
-    return {
-      templateUrl:'/directives/sidebar-navigation.html'
-      //template: '<p>Heelo<p/>'
-    };
-  });
+angular.module('app.directives', ['app.controllers','app.services']);

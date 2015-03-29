@@ -3,7 +3,7 @@
 angular.module('app.directives')
   .directive('menuBar',function() {
     return {
-      require: '^menuLink',
+      // require: '^menuLink',
       restrict: 'E',
       scope: {
         links:'='

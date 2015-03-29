@@ -97,6 +97,12 @@ module.exports = function(grunt) {
           'public/less/**/*.less'
         ],
         tasks: ['less:layouts']
+      },
+      agrippaLess: {
+        files: [
+          'public/styles/**/*.less'
+        ],
+        tasks: ['less:agrippa']
       }
     },
     uglify: {
@@ -193,6 +199,11 @@ module.exports = function(grunt) {
           'public/layouts/admin.min.css': ['public/layouts/admin.less']
         }
       },
+      agrippa: {
+        files: {
+          'public/styles/agrippa.min.css':['public/styles/agrippa.less']
+        }
+      },
       views: {
         files: [{
           expand: true,
@@ -219,7 +230,8 @@ module.exports = function(grunt) {
       css: {
         src: [
           'public/layouts/**/*.min.css',
-          'public/views/**/*.min.css'
+          'public/views/**/*.min.css',
+          'public/styles/**/*.min.css'
         ]
       },
       vendor: {
