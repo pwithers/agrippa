@@ -140,37 +140,21 @@ exports = module.exports = function(app, passport) {
   app.get('/admin/search/', require('./views/admin/search/index').find);
 
   //account
-  app.all('/account*', ensureAuthenticated);
-  app.all('/account*', ensureAccount);
-  app.get('/account/', require('./views/account/index').init);
+  app.all('/app*', ensureAuthenticated);
+  app.all('/app*', ensureAccount);
+  app.get('/app/', require('./views/app/index').init);
 
   //account > verification
-  app.get('/account/verification/', require('./views/account/verification/index').init);
-  app.post('/account/verification/', require('./views/account/verification/index').resendVerification);
-  app.get('/account/verification/:token/', require('./views/account/verification/index').verify);
+  app.get('/app/verification/', require('./views/app/verification/index').init);
+  app.post('/app/verification/', require('./views/app/verification/index').resendVerification);
+  app.get('/app/verification/:token/', require('./views/app/verification/index').verify);
 
   //account > settings
-  app.get('/account/settings/', require('./views/account/settings/index').init);
-  app.put('/account/settings/', require('./views/account/settings/index').update);
-  app.put('/account/settings/identity/', require('./views/account/settings/index').identity);
-  app.put('/account/settings/password/', require('./views/account/settings/index').password);
+  app.get('/app/settings/', require('./views/app/settings/index').init);
+  app.put('/app/settings/', require('./views/app/settings/index').update);
+  app.put('/app/settings/identity/', require('./views/app/settings/index').identity);
+  app.put('/app/settings/password/', require('./views/app/settings/index').password);
 
-  //account > settings > social
-  app.get('/account/settings/twitter/', passport.authenticate('twitter', { callbackURL: '/account/settings/twitter/callback/' }));
-  app.get('/account/settings/twitter/callback/', require('./views/account/settings/index').connectTwitter);
-  app.get('/account/settings/twitter/disconnect/', require('./views/account/settings/index').disconnectTwitter);
-  app.get('/account/settings/github/', passport.authenticate('github', { callbackURL: '/account/settings/github/callback/' }));
-  app.get('/account/settings/github/callback/', require('./views/account/settings/index').connectGitHub);
-  app.get('/account/settings/github/disconnect/', require('./views/account/settings/index').disconnectGitHub);
-  app.get('/account/settings/facebook/', passport.authenticate('facebook', { callbackURL: '/account/settings/facebook/callback/' }));
-  app.get('/account/settings/facebook/callback/', require('./views/account/settings/index').connectFacebook);
-  app.get('/account/settings/facebook/disconnect/', require('./views/account/settings/index').disconnectFacebook);
-  app.get('/account/settings/google/', passport.authenticate('google', { callbackURL: '/account/settings/google/callback/', scope: ['profile email'] }));
-  app.get('/account/settings/google/callback/', require('./views/account/settings/index').connectGoogle);
-  app.get('/account/settings/google/disconnect/', require('./views/account/settings/index').disconnectGoogle);
-  app.get('/account/settings/tumblr/', passport.authenticate('tumblr', { callbackURL: '/account/settings/tumblr/callback/' }));
-  app.get('/account/settings/tumblr/callback/', require('./views/account/settings/index').connectTumblr);
-  app.get('/account/settings/tumblr/disconnect/', require('./views/account/settings/index').disconnectTumblr);
 
   //questions
   app.all('/questions*', ensureAuthenticated);
@@ -217,6 +201,8 @@ exports = module.exports = function(app, passport) {
   // create group
   // delete group
 
+  // APIT USer
+  app.get('/api/user',require('./api/user/get').get);
 
   // API login
   app.post('/api/login',require('./api/login').login);//unused

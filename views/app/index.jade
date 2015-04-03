@@ -1,0 +1,13 @@
+extends ../../layouts/account
+
+block head
+  title Agrippa
+
+block body
+
+  div.row
+    div(ng-controller="Controller")
+      nav-bar(links="links",headinfo="headinfo")
+  div.row
+    div.col-md-8.col-md-offset-2(ng-view)
+      p Loading...

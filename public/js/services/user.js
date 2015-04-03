@@ -1,15 +1,14 @@
 'use strict';
 angular.module('app.services')
 .factory('userService', ['$http', function($http){
-  var aPrivateVariable = "last";
+   var userService = {};
 
-  function hello() {
-    return "first " + aPrivateVariable;
-  }
+   var user = $http.get('/api/user').then(function(resp) {
+      return resp.data;
+   });
 
-  // expose a public API
-  return {
-    hello: hello
-  };
+
+   userService.user = function () {return user;};
+   return userService;
 
 }]);

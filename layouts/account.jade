@@ -13,16 +13,6 @@ html
       div.container-fluid
         block body
 
-    div.footer
-      div.container
-        div.inner
-          span.copyright.pull-right
-            |&#169; #{copyrightYear} #{copyrightName}
-          ul.links
-            li: a(href='/') Home
-            li: a(href='/logout/') Sign Out
-          div.clearfix
-
     div.ajax-spinner
       img(src='/media/ajax-pulse.gif')
 
@@ -31,3 +21,4 @@ html
     script(src='/layouts/core.min.js?#{cacheBreaker}')
     script(src='/views/account/index.min.js?#{cacheBreaker}')
     script(src='/js/app.min.js?#{cacheBreaker}')
+    script(src='/vendor/angular/angular-route.js?#{cacheBreaker}')
