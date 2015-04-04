@@ -5,9 +5,6 @@ angular.module('app.directives')
     return {
       restrict: 'E',
       controller: 'HeadUnit',
-      link: function(scope,element,attrs,headUnitCtrl){
-        headUnitCtrl.init(element);
-      },
       templateUrl:'/directives/sidebar/head-unit.html'
     };
   }]);

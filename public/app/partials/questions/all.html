@@ -1,0 +1,12 @@
+<h1><strong>Questions</strong></h1>
+<br />
+
+<input ng-model="search"  class="question question-query" type="text" placeholder="Filter" />
+
+<div ng-repeat="question in questions | filter:search">
+  <question-block question="question"> </question-block>
+</div>
+
+<a ng-href='#/questions/ask' class="question question-ask">
+  <h4><span class="pull-left glyphicon glyphicon-plus-sign"></span> &nbsp; Ask something new </h4>
+</a>

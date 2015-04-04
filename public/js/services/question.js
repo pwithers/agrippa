@@ -4,6 +4,7 @@ angular.module('app.services')
    var questionService = {};
 
    var questions = $http.get('/api/questions/all').then(function(resp) {
+     
       return resp.data;
    });
 
